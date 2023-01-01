@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">StoryApp</string>
+    <string name="login_title_tv">Yuk,lihat kisah mereka belajar di Dicoding</string>
+    <string name="message_login_page">Kita login dulu yaa..!</string>
+    <string name="email">Email</string>
+    <string name="password">Kata Sandi</string>
+    <string name="login">Masuk</string>
+
+    <string name="register">Belum punya akun?</string>
+    <string name="register_txt">Daftar</string>
+    <string name="title_signup_page">Isi dulu data diri kamu, yaa</string>
+    <string name="name">Nama</string>
+    <string name="loginInfo">Sudah punya akun?</string>
+    <string name="masuk">Masuk</string>
+    <string name="register_content_desc">Gambar halaman register</string>
+    <string name="logout">Keluar</string>
+
+    <string name="gambar_story">Gambar story</string>
+    <string name="up_story_text">Tombol unggah story</string>
+    <string name="upload">Unggah</string>
+    <string name="gallery">Galeri</string>
+    <string name="camera">Kamera</string>
+    <string name="description">Deskripsi</string>
+    <string name="txt_uploading">Tunggu sebentar…</string>
+    <string name="invalid_email">Email tidak valid</string>
+    <string name="password_min_length">Password Minimal 8 Karakter</string>
+    <string name="success">Sukses!</string>
+
+
+    <string name="fill_email">Masukkan email</string>
+    <string name="fill_password">Masukkan kata sandi</string>
+    <string name="fill_name">Masukkan nama</string>
+    <string name="empty_image_selected">Silakan masukkan berkas gambar terlebih dahulu.</string>
+    <string name="empty_description">Deskripsi masih kosong</string>
+    <string name="permission_denied">Tidak mendapatkan permission.</string>
+    <string name="chose_pic">Pilih gambar</string>
+
+    <string name="logout_msg">Apakah anda yakin ingin keluar?</string>
+    <string name="yes">Ya</string>
+    <string name="No">Tidak</string>
+    <string name="upload_story">Unggah Cerita</string>
+
+    <string name="appwidget_text">StoryApp Banner</string>
+    <string name="empty_text">TIDAK ADA DATA</string>
+    <string name="add_widget">Tambah Widget</string>
+
+
+</resources>

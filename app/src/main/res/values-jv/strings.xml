@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">StoryApp</string>
+    <string name="login_title_tv">Yuk,mirsani criyos piyambakipun sedaya sinau wonten Dicoding </string>
+    <string name="message_login_page">Login rumiyin yaa..! </string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Mlebet</string>
+
+    <string name="register">Dereng gadhah akun?</string>
+    <string name="register_txt">Daftar</string>
+    <string name="title_signup_page">isi rumiyin data dhirinipun sampeyan yaa</string>
+    <string name="name">Nami</string>
+    <string name="loginInfo">Sampun gadhah akun?</string>
+    <string name="masuk">Mlebet</string>
+    <string name="register_content_desc">Gambar halaman register</string>
+    <string name="logout">Logout</string>
+
+    <string name="gambar_story">Gambar criyos</string>
+    <string name="up_story_text">Tombol unggah criyos</string>
+    <string name="upload">Unggah</string>
+    <string name="gallery">Galeri</string>
+    <string name="camera">Kamera</string>
+    <string name="description">Deskripsi</string>
+    <string name="txt_uploading">Tengga sekedhap…</string>
+    <string name="invalid_email">Email ora valid</string>
+    <string name="password_min_length">Tembung sandi minimal 8 karakter </string>
+    <string name="success">Sukses!</string>
+
+    <string name="fill_email">Masukkan email</string>
+    <string name="fill_password">Masukkan tembung sandi </string>
+    <string name="fill_name">Masukkan nami</string>
+    <string name="empty_image_selected">mangga masukkan berkas gambar langkung-langkung rumiyin. </string>
+    <string name="empty_description">Deskripsi taksih kosong </string>
+    <string name="permission_denied">Mboten angsal izin. </string>
+    <string name="chose_pic">Pilih gambar</string>
+
+    <string name="logout_msg">Punapa sampeyan saestu kajeng medal? </string>
+    <string name="yes">Nggih</string>
+    <string name="No">Mboten</string>
+    <string name="upload_story">Unggah Criyos</string>
+
+    <string name="appwidget_text">StoryApp Banner</string>
+    <string name="empty_text">Mboten wonten data </string>
+    <string name="add_widget">Tambah Widget</string>
+
+
+
+</resources>

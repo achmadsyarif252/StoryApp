@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">StoryApp</string>
+    <string name="login_title_tv">Let\'s see their story of learning at Dicoding</string>
+    <string name="message_login_page">Let\'s log in first!</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+
+    <string name="register">No account yet?</string>
+    <string name="register_txt">Register</string>
+    <string name="title_signup_page">Fill in your personal data first, okay?</string>
+    <string name="name">Name</string>
+    <string name="loginInfo">Have an account?</string>
+    <string name="masuk">Login</string>
+    <string name="register_content_desc">Register page image</string>
+    <string name="logout">Logout</string>
+
+    <string name="gambar_story">Picture story</string>
+    <string name="up_story_text">Story upload button</string>
+    <string name="upload">Upload</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="description">Description</string>
+    <string name="txt_uploading">Wait a minute…</string>
+    <string name="invalid_email">Invalid Email</string>
+    <string name="password_min_length">Password at least 8 characters</string>
+    <string name="success">Success!</string>
+
+    <string name="fill_email">Enter email</string>
+    <string name="fill_password">Enter password</string>
+    <string name="fill_name">Enter name</string>
+    <string name="empty_image_selected">Please insert the image file first.</string>
+    <string name="empty_description">Description is still empty</string>
+    <string name="permission_denied">Not getting permission.</string>
+    <string name="chose_pic">Select an image</string>
+
+    <string name="logout_msg">Are you sure you want to quit?</string>
+    <string name="yes">Yes</string>
+    <string name="No">No</string>
+    <string name="upload_story">Upload Story</string>
+
+    <string name="appwidget_text">StoryApp Banner</string>
+    <string name="empty_text">NO DATA</string>
+    <string name="add_widget">Add widget</string>
+</resources>
