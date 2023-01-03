@@ -1,20 +1,24 @@
 package com.example.storyapp.viewmodel
 
+import android.content.Context
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.storyapp.R
 import com.example.storyapp.model.UserModel
 import com.example.storyapp.model.UserPreference
-import com.example.storyapp.data.retrofit.api.ApiConfig
-import com.example.storyapp.data.retrofit.response.RegisterUserResponse
+import com.example.storyapp.retrofit.api.ApiConfig
+import com.example.storyapp.retrofit.response.RegisterUserResponse
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RegisterViewModel(private val pref: UserPreference) : ViewModel() {
+class RegisterViewModel(private val pref: UserPreference, context: Context) : ViewModel() {
+    private val applicationContext = context.applicationContext
+
     private val _alertMsg = MutableLiveData<String>()
     val alertMessage: LiveData<String> = _alertMsg
 
@@ -61,7 +65,7 @@ class RegisterViewModel(private val pref: UserPreference) : ViewModel() {
                         }
                         _isError.value = false
                         _alertMsg.value =
-                            "Akunnya sudah jadi nih. Yuk, login dan lihat cerita seru teman-teman kamu."
+                            applicationContext.getString(R.string.register_result_msg)
                     } else {
                         _isError.value = true
                     }

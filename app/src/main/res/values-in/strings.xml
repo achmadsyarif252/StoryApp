@@ -43,6 +43,13 @@
     <string name="appwidget_text">StoryApp Banner</string>
     <string name="empty_text">TIDAK ADA DATA</string>
     <string name="add_widget">Tambah Widget</string>
+    <string name="register_title">Daftar</string>
+
+    <string name="success_image_upload">Gambar berhasil diupload</string>
+    <string name="login_succes">Berhasil login</string>
+    <string name="register_result_msg">Akunnya sudah jadi nih. Yuk, login dan lihat cerita seru teman-teman kamu.</string>
+    <string name="upload_fail">Gambar gagal diupload %1$s</string>
+
 
 
 </resources>

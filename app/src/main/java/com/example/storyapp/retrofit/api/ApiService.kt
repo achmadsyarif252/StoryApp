@@ -1,9 +1,9 @@
-package com.example.storyapp.data.retrofit.api
+package com.example.storyapp.retrofit.api
 
-import com.example.storyapp.data.retrofit.response.FileUploadResponse
-import com.example.storyapp.data.retrofit.response.LoginResponse
-import com.example.storyapp.data.retrofit.response.RegisterUserResponse
-import com.example.storyapp.data.retrofit.response.StoryResponse
+import com.example.storyapp.retrofit.response.FileUploadResponse
+import com.example.storyapp.retrofit.response.LoginResponse
+import com.example.storyapp.retrofit.response.RegisterUserResponse
+import com.example.storyapp.retrofit.response.StoryResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call

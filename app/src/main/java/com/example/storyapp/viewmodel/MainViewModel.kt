@@ -1,5 +1,6 @@
 package com.example.storyapp.viewmodel
 
+import android.content.Context
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,9 +9,9 @@ import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.storyapp.model.UserModel
 import com.example.storyapp.model.UserPreference
-import com.example.storyapp.data.retrofit.api.ApiConfig
-import com.example.storyapp.data.retrofit.response.ListStoryItem
-import com.example.storyapp.data.retrofit.response.StoryResponse
+import com.example.storyapp.retrofit.api.ApiConfig
+import com.example.storyapp.retrofit.response.ListStoryItem
+import com.example.storyapp.retrofit.response.StoryResponse
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback

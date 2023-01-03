@@ -42,4 +42,10 @@
     <string name="appwidget_text">StoryApp Banner</string>
     <string name="empty_text">NO DATA</string>
     <string name="add_widget">Add widget</string>
+    <string name="register_title">Register</string>
+
+    <string name="success_image_upload">Image uploaded successfully</string>
+    <string name="login_succes">Successful login</string>
+    <string name="register_result_msg">The account is ready. Let\'s log in and see your friends\' exciting stories.</string>
+    <string name="upload_fail">Image failed to upload %1$s</string>
 </resources>

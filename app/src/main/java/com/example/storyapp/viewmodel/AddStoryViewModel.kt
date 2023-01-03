@@ -1,17 +1,21 @@
 package com.example.storyapp.viewmodel
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.storyapp.data.retrofit.api.ApiConfig
-import com.example.storyapp.data.retrofit.response.FileUploadResponse
+import com.example.storyapp.R
+import com.example.storyapp.retrofit.api.ApiConfig
+import com.example.storyapp.retrofit.response.FileUploadResponse
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AddStoryViewModel : ViewModel() {
+class AddStoryViewModel(context: Context) : ViewModel() {
+    private val applicationContext = context.applicationContext
+
     private var _isUploading = MutableLiveData<Boolean>()
     val isUploading: LiveData<Boolean> = _isUploading
 
@@ -36,16 +40,17 @@ class AddStoryViewModel : ViewModel() {
                 if (response.isSuccessful) {
                     val responseBody = response.body()
                     if ((responseBody != null) && (responseBody.error == false)) {
-                        _msg.value = "Gambar berhasil diupload"
+                        _msg.value = applicationContext.getString(R.string.success_image_upload)
                     }
                 } else {
-                    _msg.value = "Gambar gagal diupload ${response.errorBody()}"
+                    _msg.value =
+                        applicationContext.getString(R.string.upload_fail, response.errorBody())
                 }
             }
 
             override fun onFailure(call: Call<FileUploadResponse>, t: Throwable) {
                 _isUploading.value = false
-                _msg.value = "Gagal mengupload gambar : ${t.message.toString()}"
+                _msg.value = applicationContext.getString(R.string.upload_fail, t.message)
             }
 
         })

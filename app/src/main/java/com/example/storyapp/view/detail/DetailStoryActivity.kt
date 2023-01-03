@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
 import com.example.storyapp.databinding.ActivityDetailStoryBinding
-import com.example.storyapp.data.retrofit.response.ListStoryItem
+import com.example.storyapp.retrofit.response.ListStoryItem
 
 class DetailStoryActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailStoryBinding

@@ -1,4 +1,4 @@
-package com.example.storyapp.data.retrofit.response
+package com.example.storyapp.retrofit.response
 
 import com.google.gson.annotations.SerializedName
 

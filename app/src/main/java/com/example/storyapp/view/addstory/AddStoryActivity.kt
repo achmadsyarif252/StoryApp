@@ -1,6 +1,7 @@
 package com.example.storyapp.view.addstory
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
@@ -23,10 +24,17 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import androidx.appcompat.app.AlertDialog
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
+import com.example.storyapp.model.UserPreference
 import com.example.storyapp.viewmodel.AddStoryViewModel
+import com.example.storyapp.viewmodel.ViewModelFactory
 
 
 import java.io.File
+
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class AddStoryActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddStoryBinding
@@ -99,7 +107,10 @@ class AddStoryActivity : AppCompatActivity() {
             )
         }
 
-        addStoryViewModel = ViewModelProvider(this)[AddStoryViewModel::class.java]
+        addStoryViewModel = ViewModelProvider(
+            this,
+            ViewModelFactory(UserPreference.getInstance(dataStore), context = applicationContext)
+        )[AddStoryViewModel::class.java]
 
         addStoryViewModel.msg.observe(this) {
             AlertDialog.Builder(this@AddStoryActivity).apply {

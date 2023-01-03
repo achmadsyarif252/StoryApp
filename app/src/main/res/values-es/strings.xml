@@ -42,6 +42,11 @@
     <string name="appwidget_text">StoryApp Banner</string>
     <string name="empty_text">SIN DATOR</string>
     <string name="add_widget">añadir widget</string>
+    <string name="register_title">Regístrese en</string>
 
+    <string name="success_image_upload">Imagen cargada correctamente</string>
+    <string name="login_succes">Inicio de sesión con éxito</string>
+    <string name="register_result_msg">La cuenta está lista. Conéctate y mira las emocionantes historias de tus amigos.</string>
+    <string name="upload_fail">Error al cargar la imagen %1$s</string>
 
 </resources>

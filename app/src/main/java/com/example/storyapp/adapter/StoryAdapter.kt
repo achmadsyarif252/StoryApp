@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.storyapp.databinding.StoryItemBinding
-import com.example.storyapp.data.retrofit.response.ListStoryItem
+import com.example.storyapp.retrofit.response.ListStoryItem
 
 class StoryAdapter(private val listStory: List<ListStoryItem>) :
     RecyclerView.Adapter<StoryAdapter.ViewHolder>() {

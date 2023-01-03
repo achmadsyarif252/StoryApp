@@ -42,7 +42,12 @@
     <string name="appwidget_text">StoryApp Banner</string>
     <string name="empty_text">Mboten wonten data </string>
     <string name="add_widget">Tambah Widget</string>
+    <string name="register_title">Daptar</string>
 
+    <string name="success_image_upload">Gambar rampung diupload</string>
+    <string name="login_succes">Bisa login</string>
+    <string name="register_result_msg">Akune sampun dados niki.Yuh,mlebu lan mirsani criyos seru kanca-kancane dhewe</string>
+    <string name="upload_fail">Gambar ora bisa diunggah %1$s</string>
 
 
 </resources>
