@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupViewModel() {
         mainViewModel = ViewModelProvider(
             this,
-            ViewModelFactory(UserPreference.getInstance(dataStore), applicationContext)
+            ViewModelFactory(UserPreference.getInstance(dataStore))
         )[MainViewModel::class.java]
 
 

@@ -65,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
     private fun setupViewModel() {
         loginViewModel = ViewModelProvider(
             this,
-            ViewModelFactory(UserPreference.getInstance(dataStore), applicationContext)
+            ViewModelFactory(UserPreference.getInstance(dataStore))
         )[LoginViewModel::class.java]
 
         loginViewModel.getUser().observe(this) { user ->

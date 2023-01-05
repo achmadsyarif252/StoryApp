@@ -109,7 +109,7 @@ class AddStoryActivity : AppCompatActivity() {
 
         addStoryViewModel = ViewModelProvider(
             this,
-            ViewModelFactory(UserPreference.getInstance(dataStore), context = applicationContext)
+            ViewModelFactory(UserPreference.getInstance(dataStore))
         )[AddStoryViewModel::class.java]
 
         addStoryViewModel.msg.observe(this) {
