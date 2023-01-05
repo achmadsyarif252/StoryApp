@@ -1,4 +1,4 @@
-package com.example.storyapp.retrofit.response
+package com.example.storyapp.data.retrofit.response
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

@@ -1,24 +1,21 @@
 package com.example.storyapp.viewmodel
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.storyapp.R
-import com.example.storyapp.model.UserModel
-import com.example.storyapp.model.UserPreference
-import com.example.storyapp.retrofit.api.ApiConfig
-import com.example.storyapp.retrofit.response.LoginResponse
+import com.example.storyapp.data.model.UserModel
+import com.example.storyapp.data.model.UserPreference
+import com.example.storyapp.data.retrofit.api.ApiConfig
+import com.example.storyapp.data.retrofit.response.LoginResponse
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class LoginViewModel(private val pref: UserPreference, context: Context) : ViewModel() {
-    private val applicationContext = context.applicationContext
+class LoginViewModel(private val pref: UserPreference) : ViewModel() {
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
@@ -51,7 +48,7 @@ class LoginViewModel(private val pref: UserPreference, context: Context) : ViewM
                 if (response.isSuccessful) {
                     val responseBody = response.body()
                     if (responseBody != null && !responseBody.error) {
-                        _msg.value = applicationContext.getString(R.string.login_succes)
+                        _msg.value = "Login Success"
                         viewModelScope.launch {
                             if (getUser().value == null) pref.saveUser(
                                 UserModel(

@@ -19,8 +19,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.storyapp.R
 import com.example.storyapp.view.register.RegisterActivity
 import com.example.storyapp.databinding.ActivityLoginBinding
-import com.example.storyapp.model.UserModel
-import com.example.storyapp.model.UserPreference
+import com.example.storyapp.data.model.UserModel
+import com.example.storyapp.data.model.UserPreference
 import com.example.storyapp.viewmodel.ViewModelFactory
 import com.example.storyapp.view.main.MainActivity
 import com.example.storyapp.viewmodel.LoginViewModel
@@ -34,7 +34,6 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var loginViewModel: LoginViewModel
     private lateinit var user: UserModel
     private lateinit var binding: ActivityLoginBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -66,12 +65,13 @@ class LoginActivity : AppCompatActivity() {
     private fun setupViewModel() {
         loginViewModel = ViewModelProvider(
             this,
-            ViewModelFactory(UserPreference.getInstance(dataStore),applicationContext)
+            ViewModelFactory(UserPreference.getInstance(dataStore), applicationContext)
         )[LoginViewModel::class.java]
 
         loginViewModel.getUser().observe(this) { user ->
             this.user = user
         }
+
     }
 
     private fun showLoading(isLoading: Boolean) {
@@ -89,7 +89,7 @@ class LoginActivity : AppCompatActivity() {
         }
         loginViewModel.msg.observe(this) {
             AlertDialog.Builder(this).apply {
-                setTitle(getString(R.string.success))
+                setTitle(getString(R.string.app_name))
                 setMessage(it)
                 setPositiveButton("OK") { _, _ ->
                     val intent = Intent(context, MainActivity::class.java)

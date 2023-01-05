@@ -1,13 +1,11 @@
 package com.example.storyapp.viewmodel
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.storyapp.R
-import com.example.storyapp.retrofit.api.ApiConfig
-import com.example.storyapp.retrofit.response.FileUploadResponse
-import com.example.storyapp.retrofit.response.LoginResponse
+import com.example.storyapp.data.retrofit.api.ApiConfig
+import com.example.storyapp.data.retrofit.response.FileUploadResponse
+import com.example.storyapp.data.retrofit.response.LoginResponse
 import com.google.gson.Gson
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -15,11 +13,13 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AddStoryViewModel(context: Context) : ViewModel() {
-    private val applicationContext = context.applicationContext
+class AddStoryViewModel : ViewModel() {
 
     private var _isUploading = MutableLiveData<Boolean>()
     val isUploading: LiveData<Boolean> = _isUploading
+
+    private var _isError = MutableLiveData<Boolean>()
+    val iserror: LiveData<Boolean> = _isError
 
     private var _msg = MutableLiveData<String>()
     val msg: LiveData<String> = _msg
@@ -42,20 +42,21 @@ class AddStoryViewModel(context: Context) : ViewModel() {
                 if (response.isSuccessful) {
                     val responseBody = response.body()
                     if ((responseBody != null) && (responseBody.error == false)) {
-                        _msg.value = applicationContext.getString(R.string.success_image_upload)
+                        _msg.value = "success"
+                        _isError.value = false
                     }
                 } else {
                     val responseBody = Gson().fromJson(
                         response.errorBody()?.charStream(),
                         LoginResponse::class.java
                     )
-                    _msg.value = responseBody.message.toString()
+                    _msg.value = responseBody.message
                 }
             }
 
             override fun onFailure(call: Call<FileUploadResponse>, t: Throwable) {
                 _isUploading.value = false
-                _msg.value = applicationContext.getString(R.string.upload_fail, t.message)
+                _msg.value = "Failed"
             }
 
         })

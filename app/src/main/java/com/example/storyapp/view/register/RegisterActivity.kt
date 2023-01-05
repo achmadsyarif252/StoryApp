@@ -17,7 +17,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import com.example.storyapp.R
 import com.example.storyapp.databinding.ActivityRegisterBinding
-import com.example.storyapp.model.UserPreference
+import com.example.storyapp.data.model.UserPreference
 import com.example.storyapp.viewmodel.ViewModelFactory
 import com.example.storyapp.view.login.LoginActivity
 import com.example.storyapp.viewmodel.RegisterViewModel
@@ -144,6 +144,17 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                 }
                 else -> {
                     registerViewModel.registerUser(name, email, password)
+                    AlertDialog.Builder(this@RegisterActivity).apply {
+                        setTitle(if (isError) "Error" else "Yeah!")
+                        setMessage(
+                            R.string.register_result_msg
+                        )
+                        setPositiveButton("OK") { _, _ ->
+                            if (!isError) finish()
+                        }
+                        create()
+                        show()
+                    }
                 }
             }
         }

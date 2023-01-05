@@ -1,4 +1,4 @@
-package com.example.storyapp.model
+package com.example.storyapp.data.model
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences

@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.storyapp.R
 import com.example.storyapp.adapter.StoryAdapter
 import com.example.storyapp.databinding.ActivityMainBinding
-import com.example.storyapp.model.UserPreference
-import com.example.storyapp.retrofit.response.ListStoryItem
+import com.example.storyapp.data.model.UserPreference
+import com.example.storyapp.data.retrofit.response.ListStoryItem
 import com.example.storyapp.view.addstory.AddStoryActivity
 import com.example.storyapp.view.detail.DetailStoryActivity
 import com.example.storyapp.view.login.LoginActivity

@@ -3,7 +3,7 @@ package com.example.storyapp.viewmodel
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.storyapp.model.UserPreference
+import com.example.storyapp.data.model.UserPreference
 
 class ViewModelFactory(private val pref: UserPreference, private val context: Context) :
     ViewModelProvider.NewInstanceFactory() {
@@ -14,13 +14,13 @@ class ViewModelFactory(private val pref: UserPreference, private val context: Co
                 MainViewModel(pref) as T
             }
             modelClass.isAssignableFrom(RegisterViewModel::class.java) -> {
-                RegisterViewModel(pref, context) as T
+                RegisterViewModel(pref) as T
             }
             modelClass.isAssignableFrom(LoginViewModel::class.java) -> {
-                LoginViewModel(pref, context) as T
+                LoginViewModel(pref) as T
             }
             modelClass.isAssignableFrom(AddStoryViewModel::class.java) -> {
-                AddStoryViewModel(context = context) as T
+                AddStoryViewModel() as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

@@ -27,7 +27,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import com.example.storyapp.model.UserPreference
+import com.example.storyapp.data.model.UserPreference
 import com.example.storyapp.viewmodel.AddStoryViewModel
 import com.example.storyapp.viewmodel.ViewModelFactory
 
@@ -41,7 +41,7 @@ class AddStoryActivity : AppCompatActivity() {
     private lateinit var currentPhotoPath: String
     private var getFile: File? = null
     private lateinit var addStoryViewModel: AddStoryViewModel
-
+    private var isError = false
 
     //launcher
     private val launcherIntentCamera = registerForActivityResult(
@@ -115,7 +115,7 @@ class AddStoryActivity : AppCompatActivity() {
         addStoryViewModel.msg.observe(this) {
             AlertDialog.Builder(this@AddStoryActivity).apply {
                 setTitle("Status!")
-                setMessage(it)
+                setMessage(getString(if (isError) R.string.upload_fail else R.string.success_image_upload))
                 setPositiveButton("OK") { _, _ ->
                     finish()
                 }
@@ -126,6 +126,10 @@ class AddStoryActivity : AppCompatActivity() {
 
         addStoryViewModel.isUploading.observe(this) {
             showUploading(it)
+        }
+
+        addStoryViewModel.iserror.observe(this) {
+            isError = it
         }
 
         binding.cameraButton.setOnClickListener { startTakePhoto() }
@@ -170,6 +174,7 @@ class AddStoryActivity : AppCompatActivity() {
                 )
 
                 addStoryViewModel.uploadToServer(TOKEN, imageMultipart, description)
+
 
             }
         }
