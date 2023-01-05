@@ -11,7 +11,6 @@ import com.example.storyapp.model.UserModel
 import com.example.storyapp.model.UserPreference
 import com.example.storyapp.retrofit.api.ApiConfig
 import com.example.storyapp.retrofit.response.LoginResponse
-import com.example.storyapp.retrofit.response.RegisterUserResponse
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
 import retrofit2.Call

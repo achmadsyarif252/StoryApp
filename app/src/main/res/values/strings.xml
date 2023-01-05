@@ -50,4 +50,6 @@
     <string name="empty_list">There is no story at this time</string>
     <string name="welcome_txt">Welcome</string>
     <string name="list_story_page">Detail Story</string>
+    <string name="login_image">Login Image</string>
+    <string name="story_image">Image Story</string>
 </resources>

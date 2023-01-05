@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel
 import com.example.storyapp.R
 import com.example.storyapp.retrofit.api.ApiConfig
 import com.example.storyapp.retrofit.response.FileUploadResponse
+import com.example.storyapp.retrofit.response.LoginResponse
+import com.google.gson.Gson
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -43,8 +45,11 @@ class AddStoryViewModel(context: Context) : ViewModel() {
                         _msg.value = applicationContext.getString(R.string.success_image_upload)
                     }
                 } else {
-                    _msg.value =
-                        applicationContext.getString(R.string.upload_fail, response.errorBody())
+                    val responseBody = Gson().fromJson(
+                        response.errorBody()?.charStream(),
+                        LoginResponse::class.java
+                    )
+                    _msg.value = responseBody.message.toString()
                 }
             }
 

@@ -29,11 +29,6 @@ class RegisterViewModel(private val pref: UserPreference, context: Context) : Vi
     private val _isError = MutableLiveData<Boolean>()
     val isError: LiveData<Boolean> = _isError
 
-    fun saveUser(userModel: UserModel) {
-        viewModelScope.launch {
-            pref.saveUser(userModel)
-        }
-    }
 
     fun registerUser(name: String, email: String, password: String) {
         _isLoading.value = true
@@ -75,7 +70,7 @@ class RegisterViewModel(private val pref: UserPreference, context: Context) : Vi
                         response.errorBody()?.charStream(),
                         RegisterUserResponse::class.java
                     )
-                    _alertMsg.value = responseBody.message
+                    _alertMsg.value = responseBody.message.toString()
                     _isError.value = true
                 }
             }

@@ -50,6 +50,9 @@
     <string name="empty_list">No hay historia en este momento</string>
     <string name="welcome_txt">Bienvenido</string>
     <string name="list_story_page">Historia detallada</string>
+    <string name="login_image">imagen de acceso</string>
+    <string name="story_image">Historia gráfica</string>
+
 
 
 </resources>

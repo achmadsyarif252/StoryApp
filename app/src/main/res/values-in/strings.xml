@@ -51,6 +51,8 @@
     <string name="empty_list">Tidak ada cerita apapun saat ini</string>
     <string name="welcome_txt">Selamat Datang</string>
     <string name="list_story_page">Detail Cerita</string>
+    <string name="login_image">Gambar Login</string>
+    <string name="story_image">Image Story</string>
 
 
 </resources>

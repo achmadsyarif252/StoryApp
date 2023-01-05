@@ -50,7 +50,8 @@
     <string name="empty_list">mboten wonten criyos napa mawon wanci puniki</string>
     <string name="welcome_txt">Sugeng Rawuh</string>
     <string name="list_story_page">Detail Criyos</string>
-
+    <string name="login_image">Gambare Login</string>
+    <string name="story_image">Gambar Criyos</string>
 
 
 </resources>

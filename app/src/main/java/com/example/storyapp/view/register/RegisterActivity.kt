@@ -171,7 +171,6 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     companion object {
-        private val TAG = RegisterActivity::class.java.simpleName
         var isError = false
 
         fun isErrorPassword(isError: Boolean) {
