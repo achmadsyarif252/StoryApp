@@ -39,15 +39,18 @@
     <string name="No">Mboten</string>
     <string name="upload_story">Unggah Criyos</string>
 
-    <string name="appwidget_text">StoryApp Banner</string>
-    <string name="empty_text">Mboten wonten data </string>
-    <string name="add_widget">Tambah Widget</string>
     <string name="register_title">Daptar</string>
 
     <string name="success_image_upload">Gambar rampung diupload</string>
     <string name="login_succes">Bisa login</string>
     <string name="register_result_msg">Akune sampun dados niki.Yuh,mlebu lan mirsani criyos seru kanca-kancane dhewe</string>
     <string name="upload_fail">Gambar ora bisa diunggah %1$s</string>
+    <string name="image_prev">Pratinjau Gambare</string>
+    <string name="setting_language">Pengaturan Basa</string>
+    <string name="empty_list">mboten wonten criyos napa mawon wanci puniki</string>
+    <string name="welcome_txt">Sugeng Rawuh</string>
+    <string name="list_story_page">Detail Criyos</string>
+
 
 
 </resources>

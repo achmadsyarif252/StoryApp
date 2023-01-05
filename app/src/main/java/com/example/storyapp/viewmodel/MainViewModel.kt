@@ -1,6 +1,5 @@
 package com.example.storyapp.viewmodel
 
-import android.content.Context
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -24,7 +23,6 @@ class MainViewModel(private val pref: UserPreference) : ViewModel() {
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
-
 
     fun getUser(): LiveData<UserModel> {
         return pref.getUser().asLiveData()
@@ -54,6 +52,7 @@ class MainViewModel(private val pref: UserPreference) : ViewModel() {
                         Log.d("MainViewModel", "onResponse: ${response.errorBody()}")
                     }
                 } else {
+
                     Log.d("MainViewModel", "onResponse: ${response.message()}")
                 }
             }

@@ -11,6 +11,8 @@ import com.example.storyapp.model.UserModel
 import com.example.storyapp.model.UserPreference
 import com.example.storyapp.retrofit.api.ApiConfig
 import com.example.storyapp.retrofit.response.LoginResponse
+import com.example.storyapp.retrofit.response.RegisterUserResponse
+import com.google.gson.Gson
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,6 +43,7 @@ class LoginViewModel(private val pref: UserPreference, context: Context) : ViewM
         client.enqueue(object : Callback<LoginResponse> {
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                 _isLoading.value = false
+
                 _msg.value = t.message.toString()
             }
 
@@ -65,7 +68,11 @@ class LoginViewModel(private val pref: UserPreference, context: Context) : ViewM
                         _msg.value = responseBody?.message
                     }
                 } else {
-                    _msg.value = response.message()
+                    val responseBody = Gson().fromJson(
+                        response.errorBody()?.charStream(),
+                        LoginResponse::class.java
+                    )
+                    _msg.value = responseBody.message
                 }
             }
         })

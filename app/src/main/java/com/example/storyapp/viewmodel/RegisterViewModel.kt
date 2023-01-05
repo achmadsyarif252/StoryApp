@@ -11,6 +11,7 @@ import com.example.storyapp.model.UserModel
 import com.example.storyapp.model.UserPreference
 import com.example.storyapp.retrofit.api.ApiConfig
 import com.example.storyapp.retrofit.response.RegisterUserResponse
+import com.google.gson.Gson
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
@@ -70,7 +71,11 @@ class RegisterViewModel(private val pref: UserPreference, context: Context) : Vi
                         _isError.value = true
                     }
                 } else {
-                    _alertMsg.value = response.message()
+                    val responseBody = Gson().fromJson(
+                        response.errorBody()?.charStream(),
+                        RegisterUserResponse::class.java
+                    )
+                    _alertMsg.value = responseBody.message
                     _isError.value = true
                 }
             }

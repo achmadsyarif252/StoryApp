@@ -39,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportActionBar?.title = "Selamat Datang"
+        supportActionBar?.title = getString(R.string.welcome_txt)
 
         weakReference = WeakReference(binding)
 

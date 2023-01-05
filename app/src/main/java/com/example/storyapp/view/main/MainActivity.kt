@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.view.*
 import androidx.appcompat.app.AlertDialog
 import androidx.datastore.core.DataStore
@@ -36,13 +37,27 @@ class MainActivity : AppCompatActivity() {
         setupViewModel()
 
         mainViewModel.listStory.observe(this) {
+            if (it.isEmpty()) {
+                val alertDialogBuilder = AlertDialog.Builder(this)
+                alertDialogBuilder.setTitle(getString(R.string.app_name))
+
+                alertDialogBuilder
+                    .setMessage(getString(R.string.empty_list))
+                    .setCancelable(false)
+                    .setPositiveButton(getString(R.string.yes)) { _, _ ->
+                        mainViewModel.logout()
+                        finish()
+                    }
+                    .setNegativeButton(getString(R.string.No)) { dialog, _ -> dialog.cancel() }
+                val alertDialog = alertDialogBuilder.create()
+                alertDialog.show()
+            }
             setStoryItem(it)
         }
 
         mainViewModel.isLoading.observe(this) {
             showLoading(it)
         }
-
 
 
         val layoutManager = LinearLayoutManager(this)
@@ -67,6 +82,8 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.logout -> logoutDialog()
+            R.id.lang_setting -> startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+
         }
         return true
     }
@@ -95,7 +112,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupViewModel() {
         mainViewModel = ViewModelProvider(
             this,
-            ViewModelFactory(UserPreference.getInstance(dataStore),applicationContext)
+            ViewModelFactory(UserPreference.getInstance(dataStore), applicationContext)
         )[MainViewModel::class.java]
 
 

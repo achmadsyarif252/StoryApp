@@ -3,6 +3,7 @@ package com.example.storyapp.view.detail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
+import com.example.storyapp.R
 import com.example.storyapp.databinding.ActivityDetailStoryBinding
 import com.example.storyapp.retrofit.response.ListStoryItem
 
@@ -14,7 +15,7 @@ class DetailStoryActivity : AppCompatActivity() {
         binding = ActivityDetailStoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.title = "Detail Story"
+        supportActionBar?.title = getString(R.string.list_story_page)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val data = intent.getParcelableExtra<ListStoryItem>(EXTRA_STORY)

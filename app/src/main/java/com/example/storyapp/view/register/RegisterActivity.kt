@@ -39,7 +39,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
-        supportActionBar?.title = "Daftar"
+        supportActionBar?.title = getString(R.string.register_txt)
 
         weakReference = WeakReference(binding)
 
@@ -166,7 +166,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
     private fun setupViewModel() {
         registerViewModel = ViewModelProvider(
             this,
-            ViewModelFactory(UserPreference.getInstance(dataStore),applicationContext)
+            ViewModelFactory(UserPreference.getInstance(dataStore), applicationContext)
         )[RegisterViewModel::class.java]
     }
 
