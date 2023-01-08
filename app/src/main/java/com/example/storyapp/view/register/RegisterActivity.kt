@@ -52,6 +52,20 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
+    fun successLoginAlert() {
+        AlertDialog.Builder(this@RegisterActivity).apply {
+            setTitle("Yeah!")
+            setMessage(
+                R.string.register_result_msg
+            )
+            setPositiveButton("OK") { _, _ ->
+                finish()
+            }
+            create()
+            show()
+        }
+    }
+
     private fun showLoading(isLoading: Boolean) {
         binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
@@ -144,16 +158,8 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                 }
                 else -> {
                     registerViewModel.registerUser(name, email, password)
-                    AlertDialog.Builder(this@RegisterActivity).apply {
-                        setTitle(if (isError) "Error" else "Yeah!")
-                        setMessage(
-                            R.string.register_result_msg
-                        )
-                        setPositiveButton("OK") { _, _ ->
-                            if (!isError) finish()
-                        }
-                        create()
-                        show()
+                    registerViewModel.isError.observe(this) {
+                        if (!it) successLoginAlert()
                     }
                 }
             }
