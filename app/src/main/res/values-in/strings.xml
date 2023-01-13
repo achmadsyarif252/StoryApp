@@ -53,6 +53,12 @@
     <string name="list_story_page">Detail Cerita</string>
     <string name="login_image">Gambar Login</string>
     <string name="story_image">Image Story</string>
+    <string name="title_activity_maps">Maps Activity</string>
+    <string name="show_maps">Tampilkan Peta</string>
 
+    <string name="normal_type">Normal</string>
+    <string name="satellite_type">Satelit</string>
+    <string name="terrain_type">Terreno</string>
+    <string name="hybrid_type">Hibrida</string>
 
 </resources>

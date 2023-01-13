@@ -20,8 +20,14 @@ class MainViewModel(private val pref: UserPreference) : ViewModel() {
     private val _listStory = MutableLiveData<List<ListStoryItem>>()
     val listStory: LiveData<List<ListStoryItem>> = _listStory
 
+    private val _locationStory = MutableLiveData<List<ListStoryItem>>()
+    val locationStory: LiveData<List<ListStoryItem>> = _locationStory
+
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
+
+    private var _errorMsg = MutableLiveData<String>()
+    val errorMsg: LiveData<String> = _errorMsg
 
     fun getUser(): LiveData<UserModel> {
         return pref.getUser().asLiveData()
@@ -51,7 +57,29 @@ class MainViewModel(private val pref: UserPreference) : ViewModel() {
                 }
             }
         })
+    }
 
+    fun getStoryLocation(token: String) {
+        _isLoading.value = true
+        val client = ApiConfig.getApiService().getStoryLocation("Bearer $token")
+        client.enqueue(object : Callback<StoryResponse> {
+            override fun onFailure(call: Call<StoryResponse>, t: Throwable) {
+                _isLoading.value = false
+                _errorMsg.value = t.message.toString()
+            }
+
+            override fun onResponse(call: Call<StoryResponse>, response: Response<StoryResponse>) {
+                _isLoading.value = false
+                if (response.isSuccessful) {
+                    val responseBody = response.body()
+                    if (responseBody != null) {
+                        _locationStory.value = responseBody.listStory
+                        _errorMsg.value = responseBody.listStory.toString()
+                    }
+                    _errorMsg.value = responseBody?.message.toString()
+                }
+            }
+        })
     }
 
 }

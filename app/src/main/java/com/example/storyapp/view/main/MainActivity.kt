@@ -20,6 +20,7 @@ import com.example.storyapp.data.retrofit.response.ListStoryItem
 import com.example.storyapp.view.addstory.AddStoryActivity
 import com.example.storyapp.view.detail.DetailStoryActivity
 import com.example.storyapp.view.login.LoginActivity
+import com.example.storyapp.view.storymaps.MapsActivity
 import com.example.storyapp.viewmodel.MainViewModel
 import com.example.storyapp.viewmodel.ViewModelFactory
 
@@ -83,6 +84,7 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.logout -> logoutDialog()
             R.id.lang_setting -> startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+            R.id.maps_story -> startActivity(Intent(this@MainActivity, MapsActivity::class.java))
 
         }
         return true

@@ -11,6 +11,8 @@
         <item
             android:id="@+id/lang_setting"
             android:title="@string/setting_language" />
+        <item android:id="@+id/maps_story"
+            android:title="@string/show_maps"/>
     </group>
 
 </menu>

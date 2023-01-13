@@ -52,6 +52,12 @@
     <string name="list_story_page">Detail Criyos</string>
     <string name="login_image">Gambare Login</string>
     <string name="story_image">Gambar Criyos</string>
+    <string name="title_activity_maps">Maps Activity</string>
+    <string name="show_maps">Tampilaken Peta </string>
 
+    <string name="normal_type">Normal</string>
+    <string name="satellite_type">Satelit</string>
+    <string name="terrain_type">Terreno</string>
+    <string name="hybrid_type">Hibrida</string>
 
 </resources>

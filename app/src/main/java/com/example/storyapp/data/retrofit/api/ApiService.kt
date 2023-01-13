@@ -33,6 +33,12 @@ interface ApiService {
         @Header("Authorization") authorization: String
     ): Call<StoryResponse>
 
+    //get story wit location test
+    @GET("stories?location=1")
+    fun getStoryLocation(
+        @Header("Authorization") authorization: String
+    ): Call<StoryResponse>
+
     //post story
     @Multipart
     @POST("stories")
